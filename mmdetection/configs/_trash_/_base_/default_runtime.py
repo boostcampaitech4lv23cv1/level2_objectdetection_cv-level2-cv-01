@@ -1,3 +1,6 @@
+from datetime import datetime
+from pytz import timezone
+now = datetime.now(timezone('Asia/Seoul')).strftime('_%y%m%d_%H%M%S')
 checkpoint_config = dict(interval=1)
 # yapf:disable
 log_config = dict(
