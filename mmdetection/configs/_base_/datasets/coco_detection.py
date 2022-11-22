@@ -67,4 +67,4 @@ data = dict(
         pipeline=test_pipeline,
     ),
 )
-evaluation = dict(interval=1, metric="bbox")
+evaluation = dict(interval=1, metric="bbox", save_best='bbox_mAP_50')
