@@ -209,6 +209,10 @@ def main():
     meta['seed'] = seed
     meta['exp_name'] = osp.basename(args.config)
 
+    ########### model save interval ##########
+    cfg.checkpoint_config.interval=6
+    ##########################################
+
     model = build_detector(
         cfg.model,
         train_cfg=cfg.get('train_cfg'),
