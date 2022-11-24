@@ -9,7 +9,7 @@ log_config = dict(
         dict(type='TextLoggerHook'),
          dict(type='WandbLoggerHook',interval=1000,
             init_kwargs=dict(
-                project="PROJECT 이름",
+                project="bc_lv2-object_detection",
                 entity ="bc_cv01",
                 name = "EXP 이름"+now
             ),)
