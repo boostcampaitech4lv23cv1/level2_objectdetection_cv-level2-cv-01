@@ -20,6 +20,10 @@ from mmdet.utils import (build_ddp, build_dp, compat_cfg, get_device,
                          replace_cfg_vals, setup_multi_processes,
                          update_data_root)
 
+from pycocotools.coco import COCO
+import pandas as pd
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -246,7 +250,29 @@ def main():
         outputs = multi_gpu_test(
             model, data_loader, args.tmpdir, args.gpu_collect
             or cfg.evaluation.get('gpu_collect', False))
+    # submission 양식에 맞게 output 후처리
+    prediction_strings = []
+    file_names = []
+    coco = COCO(cfg.data.test.ann_file)
+    img_ids = coco.getImgIds()
 
+    class_num = 10
+    for i, out in enumerate(outputs):
+        prediction_string = ''
+        image_info = coco.loadImgs(coco.getImgIds(imgIds=i))[0]
+        for j in range(class_num):
+            for o in out[j]:
+                prediction_string += str(j) + ' ' + str(o[4]) + ' ' + str(o[0]) + ' ' + str(o[1]) + ' ' + str(
+                    o[2]) + ' ' + str(o[3]) + ' '
+            
+        prediction_strings.append(prediction_string)
+        file_names.append(image_info['file_name'])
+
+
+    submission = pd.DataFrame()
+    submission['PredictionString'] = prediction_strings
+    submission['image_id'] = file_names
+    submission.to_csv(os.path.join(cfg.work_dir, f'submission_{epoch}.csv'), index=None)
     rank, _ = get_dist_info()
     if rank == 0:
         if args.out:
