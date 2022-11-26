@@ -54,7 +54,9 @@ def create(name, pretrained, channels, classes, autoshape):
         raise Exception(s) from e
 
 
-def custom(path_or_model='path/to/model.pt', autoshape=True):
+PROJECT_NAME = 'bc_lv2-object_detection'
+EXPERIMENT_NAME = 'yolov7_newdata_epoch100_base'
+def custom(path_or_model=f'{PROJECT_NAME}/{EXPERIMENT_NAME}/weights/best.pt', autoshape=True):
     """custom mode
 
     Arguments (3 options):

@@ -109,6 +109,7 @@ def parse_args():
         help='job launcher')
     parser.add_argument('--local_rank', type=int, default=0)
     args = parser.parse_args()
+
     if 'LOCAL_RANK' not in os.environ:
         os.environ['LOCAL_RANK'] = str(args.local_rank)
 
@@ -211,6 +212,7 @@ def main():
     }
 
     rank, _ = get_dist_info()
+
     # allows not to create
     if args.work_dir is not None and rank == 0:
         mmcv.mkdir_or_exist(osp.abspath(args.work_dir))
@@ -273,6 +275,7 @@ def main():
     submission['PredictionString'] = prediction_strings
     submission['image_id'] = file_names
     submission.to_csv(os.path.join(cfg.work_dir, f'submission_{epoch}.csv'), index=None)
+    
     rank, _ = get_dist_info()
     if rank == 0:
         if args.out:

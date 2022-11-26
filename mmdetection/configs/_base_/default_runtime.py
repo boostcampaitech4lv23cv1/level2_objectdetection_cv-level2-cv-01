@@ -11,7 +11,7 @@ log_config = dict(
             init_kwargs=dict(
                 project="bc_lv2-object_detection",
                 entity ="bc_cv01",
-                name = "EXP 이름"+now
+                name = "base"+now
             ),)
     ])
 # yapf:enable
