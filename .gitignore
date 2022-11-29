@@ -199,3 +199,15 @@ mmdetection/work_dirs/*
 mmdetection/work_dirs
 mmdetection/wandb
 mmdetection/wandb/*
+
+yolov5/bc_lv2-object_detection/*
+yolov5/bc_lv2-object_detection
+yolov5/__pycache__
+yolov5/__pycache__/*
+yolov5/wandb
+yolov5/wandb/*
+yolov5/runs
+yolov5/runs/*
+yolov5/results
+yolov5/results/*
+*.pt
