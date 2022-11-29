@@ -208,4 +208,6 @@ yolov5/wandb
 yolov5/wandb/*
 yolov5/runs
 yolov5/runs/*
+yolov5/results
+yolov5/results/*
 *.pt
