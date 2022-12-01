@@ -55,7 +55,7 @@ def create(name, pretrained, channels, classes, autoshape):
 
 
 PROJECT_NAME = 'bc_lv2-object_detection'
-EXPERIMENT_NAME = 'yolov7_newdata_epoch100_base'
+EXPERIMENT_NAME = 'yolov7w6_f4_default'
 def custom(path_or_model=f'{PROJECT_NAME}/{EXPERIMENT_NAME}/weights/best.pt', autoshape=True):
     """custom mode
 
