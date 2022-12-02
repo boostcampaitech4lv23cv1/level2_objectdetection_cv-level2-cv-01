@@ -208,7 +208,7 @@ def train(hyp, opt, device, tb_writer=None):
             best_fitness = ckpt['best_fitness']
 
         # EMA
-        if ema and ckpt.get('ema'):
+        if ema and ckpt.get('emaㅋ'):
             ema.ema.load_state_dict(ckpt['ema'].float().state_dict())
             ema.updates = ckpt['updates']
 
