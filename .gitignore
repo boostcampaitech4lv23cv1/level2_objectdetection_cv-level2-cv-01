@@ -200,6 +200,10 @@ mmdetection/work_dirs
 mmdetection/wandb
 mmdetection/wandb/*
 
+yolov7/wandb/*
+yolov7/bc_lv2-object_detection/*
+yolov7/weights/*
+
 yolov5/bc_lv2-object_detection/*
 yolov5/bc_lv2-object_detection
 yolov5/__pycache__
@@ -211,3 +215,4 @@ yolov5/runs/*
 yolov5/results
 yolov5/results/*
 *.pt
+
