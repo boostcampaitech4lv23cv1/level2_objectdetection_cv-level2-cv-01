@@ -47,14 +47,14 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type=dataset_type,
-        ann_file=data_root + "new_cv_strategies/train_newf0.json",
+        ann_file=data_root + 'new_cv_strategy/train_newf0.json',
         img_prefix=data_root,
         classes=classes,
         pipeline=train_pipeline,
     ),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + "new_cv_strategies/valid_newf0.json",
+        ann_file=data_root + 'new_cv_strategy/valid_newf0.json',
         img_prefix=data_root,
         classes=classes,
         pipeline=test_pipeline,
