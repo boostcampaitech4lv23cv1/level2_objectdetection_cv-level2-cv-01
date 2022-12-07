@@ -70,12 +70,12 @@
 **[2022.11.30 - 2022.12.01]**
 - Pseudo Labeling with threshold = 0.6
 - Ensemble : NMS, Soft-NMS, WBF  
-<img src="files\pipeline.png" width="50%" height="20%"/>
+<img src="files\pipeline.png" width="90%" height="30%"/>
 
 ***
 ## Result
 **Public 9th. Private 12th(9th).**  
-<img src="files\result_leaderboard.png" width="50%" height="20%"/>
+<img src="files\result_leaderboard.png" width="20%" height="5%"/>
 - 단일 모델 제출 최고 점수 : 0.6103→0.5987 (Swin_transformer-ATSS)
 - Ensemble 후 (public → private)
     - 0.6810 → 0.6635 : swin-l, yoloV5, yoloV7의 f0~4와 pseudo label 총 30개 WBF Ensemble
